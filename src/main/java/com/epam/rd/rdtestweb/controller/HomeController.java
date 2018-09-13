@@ -36,7 +36,7 @@ public class HomeController {
             return modelAndView;
         }
 
-        modelAndView.addObject("helloPhrase", "Привет админ, " + currentUser.getLogin() + "!");
+        modelAndView.addObject("helloPhrase", "Привет админ, ");
 
         return modelAndView;
     }
@@ -46,6 +46,9 @@ public class HomeController {
             @PathVariable(name = "pageId", required = false) String pageId) {
         ModelAndView modelAndView = new ModelAndView();
 
+        int i = 12/0;
+        
+        
         List<Book> books = new ArrayList<>();
 
         books.add(new Book(11L, "Hobbit", "Tolkin"));
@@ -56,7 +59,7 @@ public class HomeController {
 
         User currentUser = userManager.getUser();
 
-        modelAndView.addObject("helloPhrase", "Привет, " + currentUser.getLogin() + "!");
+        modelAndView.addObject("helloPhrase", "Привет, ");
         modelAndView.addObject("books", books);
 
         return modelAndView;
